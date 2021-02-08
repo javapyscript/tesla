@@ -1,0 +1,20 @@
+.page-title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    //margin-top: 30%;;
+    flex-grow: 1;
+
+    .main-title {
+        font-size: 41px;
+        color: #393C41;
+        margin-top: calc(16vh + 5px);
+        letter-spacing: 1px;
+        line-height: 48px;
+        padding: 4px 0;
+    }
+    .description {
+        font-size: 14px;
+        color: #6D6F73;
+    }
+}

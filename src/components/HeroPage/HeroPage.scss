@@ -1,0 +1,36 @@
+.hero-page {
+    height: 100vh;
+    background-image: none;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: scroll;
+    background-size: cover;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    scroll-snap-align: start;
+
+    .sec-action {
+        margin-bottom: 60px;
+    }
+}
+
+@media only screen and (max-width: 559px) {
+    .hero-page {
+        background-image: url('./../../assets/model3-small.jfif');
+    }
+}
+
+@media only screen and (min-width: 600px) {
+    .hero-page {
+        background-image: url('./../../assets/model3-large.jfif');
+    }
+}
+
+@media only screen and (min-width: 640px) and  (orientation:portrait){
+    .hero-page {
+        background-image: url('./../../assets/model3-small.jfif');
+    }
+}
+
