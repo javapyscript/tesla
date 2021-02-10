@@ -12,9 +12,15 @@
         //letter-spacing: 1px;
         line-height: 48px;
         padding: 4px 0;
+        text-align: center;
     }
     .description {
         font-size: 14px;
         color: #6D6F73;
+    }
+    @media only screen and (max-width: 600px) {
+        .main-title {
+            font-size: 27px;
+        }
     }
 }
