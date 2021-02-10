@@ -1,6 +1,5 @@
 .hero-pages {
     height: 100vh;
-    scroll-snap-type: y mandatory;
+    scroll-snap-type: y mandatory   ;
     overflow-y: scroll;
-    scroll-snap-points-y: repeat(100vh);
 }
