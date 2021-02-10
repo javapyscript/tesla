@@ -1,7 +1,8 @@
 import './HeroPage.scss';
 import Title from './Title/Title';
-import React, { useRef, useEffect } from "react";
+import React, { useRef } from "react";
 import ActionButton from './ActionButton/ActionButton';
+import useWindowSize from './../../utils/useWindowSize';
 
 interface HeroProps {
     index: number;
@@ -36,9 +37,11 @@ const pages = [
 const HeroPage = (props: HeroProps): JSX.Element => {
     const data = pages[props.index];
     const heroPage = useRef<HTMLDivElement>(null);
+    const width = useWindowSize()[0];
+    const backUrl = "url(images/" + data.wallRoot + (width >= 600 ? "-large.jfif)" : "-small.jfif)");
     return (
         <>
-        <div className="hero-page" id={props.index.toString()} ref={heroPage} style={{backgroundImage: "url(images/" + data.wallRoot + "-large.jfif)"}}>
+        <div className="hero-page" id={props.index.toString()} ref={heroPage} style={{backgroundImage: backUrl}}>
             <Title title={data.title} description={data.description}></Title>
             <ActionButton actions={data.buttons}></ActionButton>
             <div className="sec-action">
