@@ -1,8 +1,23 @@
-.sidebar {
-    position: absolute;
-    background-color: white;
-    width: 312px;
+.sidebar-wrapper {
+    width: 100vw;
     height: 100vh;
-    z-index: 3;
-    right: 0;
+    background: rgba(0,0,0,0.4);
+    position: absolute;
+    left: 0;
+    top: 0;
+
+    .sidebar {
+        position: absolute;
+        background-color: white;
+        width: 312px;
+        height: 100vh;
+        z-index: 4;
+        right: 0;
+        top: 0;
+        opacity: 1;
+        transition: all 0.2s ease-in-out;
+        &.open {
+            opacity: 1;
+        }
+    }
 }

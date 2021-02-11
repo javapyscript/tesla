@@ -1,32 +1,17 @@
 import './Navbar.scss';
 import useWindowSize from './../../utils/useWindowSize';
 import {useState} from 'react';
-import SideBar from './../SideBar/SideBar';
 
 
 
-const Navbar = (): JSX.Element => {
+
+const Navbar = (props: any): JSX.Element => {
     const width2 = window.innerWidth
 || document.documentElement.clientWidth
 || document.body.clientWidth;
 
-    const [sideBarOpen, setSideBarOpen] = useState(false);
-
     const width = useWindowSize()[0];
 
-    function openSideBar() {
-        const hamburger = document.getElementById("hamburger");
-        if (hamburger?.classList.contains("open")) {
-            document.getElementById("hamburger")?.classList.remove("open");
-            setSideBarOpen(false);
-        }
-        else {
-            document.getElementById("hamburger")?.classList.add("open");
-            setSideBarOpen(true);
-        }
-        
-        
-    }
     
     return (
         <>
@@ -46,7 +31,7 @@ const Navbar = (): JSX.Element => {
                     </div>
             )} 
             <div className="right-nav">
-                {width > 1200 && !sideBarOpen && (
+                {width > 1200 && !props.sideBarOpen && (
                     <>
                     <div className="menu-item">SHOP</div>
                     <div className="menu-item">TESLA ACCOUNT</div>
@@ -55,14 +40,8 @@ const Navbar = (): JSX.Element => {
                 
             </div>
         </div>
-        <div id="hamburger" className="hamburger" onClick={openSideBar}>
-            <div className="first-line line"></div>
-            <div className="second-line line"></div>
-            <div className="third-line line"></div>
-        </div>
-        {sideBarOpen && (
-            <SideBar></SideBar>
-        )}
+        
+        
         </>
     );
 }

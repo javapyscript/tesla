@@ -6,11 +6,10 @@ import useWindowSize from './../../utils/useWindowSize';
 
 interface HeroProps {
     index: number;
+    sideBarOpen: boolean;
 }
 
-const wallpapers = [
 
-];
 
 const pages = [
     {
@@ -39,6 +38,7 @@ const HeroPage = (props: HeroProps): JSX.Element => {
     const heroPage = useRef<HTMLDivElement>(null);
     const width = useWindowSize()[0];
     const backUrl = "url(images/" + data.wallRoot + (width >= 600 ? "-large.jfif)" : "-small.jfif)");
+    //const fullUrl = props.sideBarOpen? "linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), " + backUrl : backUrl
     return (
         <>
         <div className="hero-page" id={props.index.toString()} ref={heroPage} style={{backgroundImage: backUrl}}>

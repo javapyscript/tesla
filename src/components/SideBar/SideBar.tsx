@@ -9,8 +9,8 @@ const SideBar = (): JSX.Element => {
     const width = useWindowSize()[0];
     
     return (
-        <div className="sidebar">
-            
+        <div className="sidebar-wrapper">
+            <div className="sidebar" id="sidebar"></div>
         </div>
     );
 }
