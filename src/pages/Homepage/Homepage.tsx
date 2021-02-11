@@ -78,7 +78,7 @@ const Homepage = (): JSX.Element => {
             </div>
             {sideBarOpen && (
                 
-                <SideBar></SideBar>
+                <SideBar sideBarOpen={sideBarOpen}></SideBar>
             )}
                 
             
