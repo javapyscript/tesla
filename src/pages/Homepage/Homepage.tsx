@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Navbar from '../../components/Navbar/Navbar';
 import HeroPage from '../../components/HeroPage/HeroPage';
 import './Homepage.scss';
@@ -39,10 +39,20 @@ const Homepage = (): JSX.Element => {
             document.getElementById("hamburger")?.classList.add("open");
             //document.getElementById("sidebar")?.classList.add("open");
             setSideBarOpen(true);
+            
         }
         
         
     }
+    useEffect(() => {
+        function closeSideBar(e: any) {
+            if (!document.getElementById('sidebar')?.contains(e.target) && !document.getElementById('hamburger')?.contains(e.target) && sideBarOpen){
+                openSideBar();
+            } 
+        }
+        window.addEventListener('click', closeSideBar);
+        return () => window.removeEventListener('click', closeSideBar);
+    }, [sideBarOpen]);
     /*useEffect(() => {
         window.addEventListener('wheel', scroller, {passive: false});
         return () => window.removeEventListener("wheel", scroller );

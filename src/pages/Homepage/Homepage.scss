@@ -8,18 +8,18 @@
     position: absolute;
     top: 18px;
     right: 10px;
+    height: 14px;
+    width: 20px;
     z-index: 10;
     
    
-    margin-right: 40px;
+    margin-right: 30px;
     margin-top: 3px;
 
     .line {
         position: absolute;
-        //right: 10px;
         width: 18px;
         height: 2px;
-        //margin-bottom: 2.5px;
         background-color: black;
         transition: all 0.2s ease-in;
     }
